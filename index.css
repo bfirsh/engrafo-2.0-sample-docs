@@ -1,0 +1,198 @@
+.ltx_document,
+.ltx_section,
+.ltx_appendix {
+  display: grid;
+  grid-template-columns: [screen-start] 8px [page-start] 1fr [page-end] 8px [screen-end];
+  grid-column-gap: 8px; }
+  @media (min-width: 768px) {
+    .ltx_document,
+    .ltx_section,
+    .ltx_appendix {
+      grid-template-columns: [screen-start] 1fr [page-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [page-end text-end] 1fr [screen-end];
+      grid-column-gap: 16px; } }
+  @media (min-width: 1080px) {
+    .ltx_document,
+    .ltx_section,
+    .ltx_appendix {
+      grid-template-columns: [screen-start] 1fr [page-start text-start] 650px [text-end gutter-start] 330px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px; } }
+
+.ltx_document > * {
+  grid-column: page; }
+
+.ltx_document > .ltx_abstract {
+  grid-column: text; }
+
+.ltx_section,
+.ltx_appendix {
+  grid-column: screen; }
+
+.ltx_section > *,
+.ltx_appendix > * {
+  grid-column: text; }
+
+.ltx_figure,
+.ltx_table {
+  margin: 1rem 0; }
+  @media (min-width: 1024px) {
+    .ltx_figure,
+    .ltx_table {
+      margin: 2rem 0; } }
+  .ltx_figure img,
+  .ltx_figure table,
+  .ltx_table img,
+  .ltx_table table {
+    width: 100%; }
+
+.ltx_caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  font-size: 13px;
+  line-height: 1.5em; }
+  .ltx_caption a {
+    color: rgba(0, 0, 0, 0.6); }
+
+.ltx_title_document {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1em;
+  font-family: Baskerville, Georgia, serif; }
+  @media (min-width: 768px) {
+    .ltx_title_document {
+      font-size: 46px;
+      margin-top: 48px; } }
+  @media (min-width: 1080px) {
+    .ltx_title_document {
+      font-size: 50px;
+      letter-spacing: -0.02em; } }
+
+.ltx_title_section,
+.ltx_title_abstract,
+.ltx_title_appendix,
+.ltx_title_bibliography {
+  font-family: Baskerville, Georgia, serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.25em;
+  margin-top: 36px;
+  margin-bottom: 24px; }
+  @media (min-width: 1024px) {
+    .ltx_title_section,
+    .ltx_title_abstract,
+    .ltx_title_appendix,
+    .ltx_title_bibliography {
+      margin-top: 48px;
+      font-size: 32px; } }
+
+.ltx_title_subsection {
+  font-family: Baskerville, Georgia, serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.4em;
+  margin-top: 36px;
+  margin-bottom: 18px;
+  font-style: italic; }
+  @media (min-width: 1024px) {
+    .ltx_title_subsection {
+      font-size: 28px; } }
+
+/* Section numbers */
+.ltx_title_section,
+.ltx_title_abstract,
+.ltx_title_appendix,
+.ltx_title_bibliography,
+.ltx_title_subsection {
+  position: relative;
+  /* Space for section number */
+  padding-right: 40px; }
+  @media (min-width: 768px) {
+    .ltx_title_section,
+    .ltx_title_abstract,
+    .ltx_title_appendix,
+    .ltx_title_bibliography,
+    .ltx_title_subsection {
+      padding-right: 0; } }
+
+.ltx_tag_section,
+.ltx_tag_subsection {
+  font-family: Baskerville, Georgia, serif;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 150px;
+  right: 0;
+  text-align: right;
+  font-size: 0.9em; }
+  @media (min-width: 768px) {
+    .ltx_tag_section,
+    .ltx_tag_subsection {
+      right: unset;
+      left: -170px; } }
+  @media (min-width: 1080px) {
+    .ltx_tag_section,
+    .ltx_tag_subsection {
+      right: unset;
+      left: -180px; } }
+  .ltx_tag_section a,
+  .ltx_tag_section a:active,
+  .ltx_tag_subsection a,
+  .ltx_tag_subsection a:active {
+    border-bottom: none; }
+  .ltx_tag_section a:hover,
+  .ltx_tag_subsection a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+
+.ltx_page_main {
+  color: rgba(0, 0, 0, 0.8);
+  font-family: Georgia, serif;
+  font-size: 17px;
+  line-height: 1.55em;
+  padding-bottom: 72px;
+  background: white; }
+  @media (min-width: 768px) {
+    .ltx_page_main {
+      font-size: 20px; } }
+  .ltx_page_main a {
+    color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-decoration: none; }
+    .ltx_page_main a:hover {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.8); }
+
+.ltx_page_content {
+  margin-bottom: 4rem; }
+
+.ltx_authors {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.55em; }
+
+.ltx_p {
+  margin-bottom: 24px; }
+
+.ltx_page_footer {
+  padding: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.55em; }
+
+.ltx_indent {
+  margin-left: 2rem; }
+
+.ltx_cite {
+  font-style: normal; }
+
+/* LaTeXML system stuff */
+.ltx_ERROR,
+.ltx_missing,
+.ltx_nounicode {
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  color: red; }
+
+.ltx_rdf {
+  display: none; }
